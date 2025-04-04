@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Pedido Especial</title>
+  <style>
+    body {
+      text-align: center;
+      background-color: #ffe6f0;
+      font-family: Arial, sans-serif;
+      margin-top: 100px;
+    }
+    h1 {
+      font-size: 28px;
+      color: #e60073;
+    }
+    button {
+      padding: 12px 24px;
+      font-size: 16px;
+      margin: 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    #sim {
+      background-color: #4CAF50;
+      color: white;
+    }
+    #nao {
+      background-color: #f44336;
+      color: white;
+      position: absolute;
+    }
+    #mensagem {
+      margin-top: 30px;
+      font-size: 24px;
+      color: #8e44ad;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Oii amor, me dá pepeto? 😞</h1>
+  <button id="sim">SIM</button>
+  <button id="nao">NÃO</button>
+
+  <p id="mensagem">EPAAAA, SABIA Q VC IA DEIXAR  🤟🏻🥰</p>
+
+  <script>
+    const botaoNao = document.getElementById("nao");
+    const botaoSim = document.getElementById("sim");
+    const mensagem = document.getElementById("mensagem");
+
+    botaoSim.onclick = () => {
+      mensagem.style.display = "block";
+      botaoSim.style.display = "none";
+      botaoNao.style.display = "none";
+    };
+
+    botaoNao.onmouseover = () => {
+      const largura = window.innerWidth - botaoNao.offsetWidth;
+      const altura = window.innerHeight - botaoNao.offsetHeight;
+      const novaEsquerda = Math.floor(Math.random() * largura);
+      const novoTopo = Math.floor(Math.random() * altura);
+      botaoNao.style.left = novaEsquerda + "px";
+      botaoNao.style.top = novoTopo + "px";
+    };
+  </script>
+
+</body>
+</html>
